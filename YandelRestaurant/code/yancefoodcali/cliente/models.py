@@ -14,6 +14,7 @@ class Producto(models.Model):
     descripcion= models.CharField(verbose_name="descripcion",null=False,blank=False,max_length=100)
     precio_unitario= models.IntegerField(verbose_name="precio_unitario",null=False,blank=False)
     detalle_producto= models.CharField(verbose_name="detalle_producto",null=False,blank=False,max_length=200)
+    imagen = models.ImageField(upload_to='opciones_menu',null=True)
     categoria_id= models.ForeignKey(Categoria,on_delete=models.CASCADE,null=True)
     class meta:
         verbose_name_plural = "producto"
