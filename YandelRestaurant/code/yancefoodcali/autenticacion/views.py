@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib import auth,messages
 from autenticacion.models import Usuario
@@ -27,17 +28,27 @@ class UsuarioController:
             return redirect('menu')
         messages.error(request,"Credenciales incorrectas")
         return redirect('login')
-    
+    @login_required
     def logout_view(request):
         auth.logout(request)
         return redirect('login')
     
     def sing_up(request):
+        nombre = request.POST.get('first-name')
+        apellido = request.POST.get('last-name')
+        email = request.POST.get('email')
+        direccion = request.POST.get('direccion')
+        usuario_form = request.POST.get('usuario')
+        clave = request.POST.get('clave')
+
         try:
-            credenciales = User.objects.create(password="nicolas10",username="nicosalaz",first_name="Nicolás",last_name="Salazar Victoria",email="nicosalaz0511@gmail.com",)
+            credenciales = User.objects.create(password=clave,username=usuario_form,
+                                               first_name=nombre,last_name=apellido,
+                                               email=email)
             credenciales.save()
-            usuario = Usuario(direccion="cra 1E Bis # 57-102",credenciales=credenciales)
+            usuario = Usuario(direccion=direccion,credenciales=credenciales)
             usuario.save()
+            messages.success(request,"Registro Exitoso")
         except Exception as e:
             credenciales.delete()
             usuario.delete()

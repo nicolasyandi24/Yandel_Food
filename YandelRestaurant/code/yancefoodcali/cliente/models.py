@@ -1,5 +1,7 @@
 from django.db import models
 
+from autenticacion.models import Usuario
+
 # Create your models here.
 class Categoria(models.Model):
     nombre_categoria= models.CharField(verbose_name="nombre_categoria",null=False,blank=False
@@ -28,3 +30,14 @@ class Inventario(models.Model):
         verbose_name_plural = "inventario"
         db_table = "inventario"
         verbose_name = "inventario"
+
+class Carrito_compra(models.Model):
+    fk_producto = models.ForeignKey(Producto,on_delete=models.CASCADE)
+    cantidad = models.IntegerField(verbose_name="cantidad",blank=False,null=False)
+    fk_usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    valor = models.IntegerField(verbose_name='valor',null=False,blank=False)
+    estado = models.BooleanField(verbose_name='estado',editable=True,null=False,default=True)
+    class meta:
+        verbose_name_plural = "carrito_compra"
+        db_table = "carrito_compra"
+        verbose_name = "carrito_compra"

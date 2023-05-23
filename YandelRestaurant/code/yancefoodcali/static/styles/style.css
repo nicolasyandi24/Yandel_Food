@@ -3,9 +3,11 @@ body{
     height: 100vh;
 }
 .menu{
+    position: absolute;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    z-index: 1;
 }
 .categoria{
     width: 100vw;
