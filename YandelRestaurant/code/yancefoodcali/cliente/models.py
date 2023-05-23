@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.db import models
 
 from autenticacion.models import Usuario
@@ -41,3 +42,23 @@ class Carrito_compra(models.Model):
         verbose_name_plural = "carrito_compra"
         db_table = "carrito_compra"
         verbose_name = "carrito_compra"
+
+class Venta(models.Model):
+    total = models.IntegerField(verbose_name="total",blank=False,null=False)
+    fk_usuario = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+    fecha = models.DateField(verbose_name='fecha',null=False,blank=False,default=datetime.now())
+    estado = models.BooleanField(verbose_name='estado',editable=True,null=False,default=True)
+    class meta:
+        verbose_name_plural = "venta"
+        db_table = "venta"
+        verbose_name = "venta"
+
+class Detalle_venta(models.Model):
+    fk_producto = models.ForeignKey(Producto,on_delete=models.CASCADE)
+    cantidad_comprada = models.IntegerField(verbose_name="cantidad_comprada",blank=False,null=False)
+    fk_venta = models.ForeignKey(Venta,on_delete=models.CASCADE)
+    valor = models.IntegerField(verbose_name='valor',null=False,blank=False)
+    class meta:
+        verbose_name_plural = "detalle_venta"
+        db_table = "detalle_venta"
+        verbose_name = "detalle_venta"
