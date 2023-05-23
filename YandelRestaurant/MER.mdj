@@ -541,7 +541,7 @@
 												"$ref": "AAAAAAGH192Dry9dDgw="
 											},
 											"font": "Arial;13;1",
-											"left": 640,
+											"left": 632,
 											"top": 381,
 											"width": 193.21728515625,
 											"height": 13,
@@ -567,7 +567,7 @@
 														"$ref": "AAAAAAGH1+JXay+wzMQ="
 													},
 													"font": "Arial;13;0",
-													"left": 645,
+													"left": 637,
 													"top": 404,
 													"width": 183.21728515625,
 													"height": 13
@@ -582,21 +582,21 @@
 														"$ref": "AAAAAAGH1+K0ky+7LCg="
 													},
 													"font": "Arial;13;0",
-													"left": 645,
+													"left": 637,
 													"top": 419,
 													"width": 183.21728515625,
 													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 640,
+											"left": 632,
 											"top": 399,
 											"width": 193.21728515625,
 											"height": 38
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 640,
+									"left": 632,
 									"top": 376,
 									"width": 193.21728515625,
 									"height": 61,
@@ -1238,7 +1238,7 @@
 												"$ref": "AAAAAAGH2lKn+bSXTPU="
 											},
 											"font": "Arial;13;1",
-											"left": 392,
+											"left": 384,
 											"top": 685,
 											"width": 239.244140625,
 											"height": 13,
@@ -1264,21 +1264,21 @@
 														"$ref": "AAAAAAGH2lL1/rSkfT0="
 													},
 													"font": "Arial;13;0",
-													"left": 397,
+													"left": 389,
 													"top": 708,
 													"width": 229.244140625,
 													"height": 13
 												}
 											],
 											"font": "Arial;13;0",
-											"left": 392,
+											"left": 384,
 											"top": 703,
 											"width": 239.244140625,
 											"height": 23
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 392,
+									"left": 384,
 									"top": 680,
 									"width": 239.244140625,
 									"height": 46,
